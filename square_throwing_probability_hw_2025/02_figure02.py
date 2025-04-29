@@ -1,14 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Objective : Generate a plot of the probability of a square intersecting the x-axis
-# Figure 1 : Simulation of 
-# fY,Θ(y, θ) = 1 / π*l , ∀(y, θ) ∈ [0, 2l] × [0,2/π]
-# fY,Θ(y, θ) = 0, otherwise.
-
-import matplotlib.pyplot as plt
-import numpy as np
-
 # Objective: Estimate the probability that a square intersects the x-axis
 edge = 1
 
@@ -25,22 +17,29 @@ def simulate_square_throwing(T, edge=1):
     """
     Simulate the square throwing process and return q_n values.
     """
+    def generate_Y():
+        X = np.random.uniform(0, 2 * edge)
+        Y = np.random.uniform(0, 2 * edge)
+        if Y > X:
+            return Y
+        else:
+            return generate_Y()
         
     q_n_values = []
 
     print(f"Simulating Results")
-
+    
     for N in T:
         count = 0
         for _ in range(N):
-            Y= np.random.uniform(0, 2 * edge)
+            Y= generate_Y()
             theta = np.random.uniform(0, np.pi / 2)
             count += intersects_x_axis(Y, theta)
         q_n = count / N
         q_n_values.append(q_n)
         print(f"Simulated {N} throws: q_n = {q_n:.4f}")
-        
     print("-" * 20)
+
     return q_n_values
 
 def draw_plot(T, q_n_values, i):
@@ -67,8 +66,7 @@ def main():
         draw_plot(T, q_n_values, i)
         converge_value = np.floor(q_n_values[-1] * 1000) / 1000
         #plt.axhline(y=converge_value, color='r', linestyle='--', label=f'Converged Value: {converge_value}')
-        plt.axhline(y=0.318, color="r", linestyle='--', label='E[$q_n$]: 0.318')
-
+        plt.axhline(y=0.102, color='r', linestyle='--', label=f'E[$q_n$]: 0.102')
     
     print(f"The result gets close to {converge_value} as n gets large.")
 

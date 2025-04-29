@@ -2,12 +2,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Objective: Estimate the probability that a square intersects the x-axis
-edge = 1
+# Figure 2: Simulation of 
+# fY,Θ(y, θ) = y / π*(l^2) , ∀(y, θ) ∈ [0, 2*l] × [0,π/2]
+# fY,Θ(y, θ) = 0, otherwise.
+#
+# The square is centered at M=(0,Y) and rotated by angle θ.
+# The square is assumed to be length of l=1.
+# The square intersects the x-axis if the distance from M to the x-axis is less than or equal to l*sqrt(2)*cos(θ).
+
+edge = 1 # l
 
 def intersects_x_axis(Y, theta):
     """
-    Given center M=(0,Y) and angle theta, determine whether
-    the square intersects the x-axis.
+    Determine whether the square intersects the x-axis.
     """
     if theta > np.pi / 4:
         theta = np.pi / 2 - theta
@@ -18,17 +25,19 @@ def simulate_square_throwing(T, edge=1):
     Simulate the square throwing process and return q_n values.
     """
     def generate_Y():
+        """
+        Generate a random Y value distributed in [0, 2*edge] and PDF is fY,Θ(y, θ) = y / π*(l^2) , ∀(y, θ) ∈ [0, 2*l] × [0,π/2].
+        """
         X = np.random.uniform(0, 2 * edge)
         Y = np.random.uniform(0, 2 * edge)
         if Y > X:
             return Y
         else:
             return generate_Y()
-        
-    q_n_values = []
 
+    # Simulate the square throwing process
     print(f"Simulating Results")
-    
+    q_n_values = []
     for N in T:
         count = 0
         for _ in range(N):
@@ -61,6 +70,7 @@ def main():
 
     plt.figure(figsize=(10, 5))
 
+    # Simulate the square throwing process and draw plots
     for i in range(1, 3):
         q_n_values = simulate_square_throwing(T, edge)
         draw_plot(T, q_n_values, i)
@@ -71,7 +81,7 @@ def main():
     print(f"The result gets close to {converge_value} as n gets large.")
 
     plt.suptitle('Simulation of Square Throwing Probability', fontsize=14)
-    plt.tight_layout(rect=[0, 0, 1, 0.95])  # Adjust layout to fit suptitle
+    plt.tight_layout(rect=[0, 0, 1, 0.95])  
     plt.legend()
     plt.show()
 

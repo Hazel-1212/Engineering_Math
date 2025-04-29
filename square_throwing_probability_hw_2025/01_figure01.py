@@ -1,15 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Objective : Generate a plot of the probability of a square intersecting the x-axis
+# Objective : Estimate the probability that a square intersects the x-axis
 # Figure 1 : Simulation of 
-# fY,Θ(y, θ) = 1 / π*l , ∀(y, θ) ∈ [0, 2l] × [0,2/π]
+# fY,Θ(y, θ) = 1 / π*l , ∀(y, θ) ∈ [0, 2*l] × [0,π/2]
 # fY,Θ(y, θ) = 0, otherwise.
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Objective: Estimate the probability that a square intersects the x-axis
+ 
 edge = 1
 
 def intersects_x_axis(Y, theta):
@@ -39,7 +35,7 @@ def simulate_square_throwing(T, edge=1):
         q_n = count / N
         q_n_values.append(q_n)
         print(f"Simulated {N} throws: q_n = {q_n:.4f}")
-        
+
     print("-" * 20)
     return q_n_values
 

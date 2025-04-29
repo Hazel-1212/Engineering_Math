@@ -1,6 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Objective : Generate a plot of the probability of a square intersecting the x-axis
+# Figure 1 : Simulation of 
+# fY,Θ(y, θ) = 1 / π*l , ∀(y, θ) ∈ [0, 2l] × [0,2/π]
+# fY,Θ(y, θ) = 0, otherwise.
+
 edge=1
 
 def intersects_x_axis(Y, theta):

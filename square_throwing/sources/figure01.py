@@ -13,9 +13,10 @@ def intersects_x_axis(Y, theta):
     Given center M=(0,Y) and angle theta, determine whether
     the square intersects the x-axis.
     """
+    sub_theta = theta 
     if theta > np.pi / 4:
-        theta = np.pi / 2 - theta
-    return Y <= edge * np.sqrt(2) * np.cos(theta) /2
+        sub_theta = np.pi / 2 - theta
+    return Y <= edge * np.sqrt(2) * np.cos(sub_theta) /2
 
 def simulate_square_throwing(T, edge=1):
     """

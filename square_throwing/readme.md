@@ -6,9 +6,9 @@
 - Department : NYCU EE 
 
 ## Python Code
-- 01_figure01.py
-- 02_figure02.py
-- 03_figure03.py
+- figure01.py
+- figure02.py
+- figure03.py
 - NYCU-113511170.py : main program
 
 ## Descriptions

@@ -68,7 +68,7 @@ def main():
     
     print(f"The result gets close to {converge_value} as n gets large.")
 
-    plt.suptitle('Simulation of Square Throwing Probability', fontsize=14)
+    plt.suptitle('Simulation of Square Throwing Probability_Fig01', fontsize=14)
     plt.tight_layout(rect=[0, 0, 1, 0.95])  # Adjust layout to fit suptitle
     plt.legend()
     plt.show()

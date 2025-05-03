@@ -10,6 +10,7 @@
 The square is randomly thrown on the x-y plane with its center fixed on the y axis. 
 
 And Y and θ are independent.
+<img src="https://github.com/Hazel-1212/Engineering_Math/blob/main/square_throwing/square.png" width=300>
 
 ## Objectives
 
@@ -23,10 +24,11 @@ The goal is to get the E[qn] and E[W] via conducting the simulation for the larg
 - figure03.py
 - verify_area.py : 
 
-To verify if E[W] obtained from figure3.py is correct.
+    *To verify if E[W] obtained from figure3.py is correct.*
 
-The file is not for simulation but for direct computing the double integration.
+    *The file is not for simulation but for direct computing the double integration.*
 
 ## Homework Descriptions
-<img src="https://github.com/Hazel-1212/Engineering_Math/blob/main/square_throwing_probability_hw_2025/Homework.png" width=800>
+<img src="https://github.com/Hazel-1212/Engineering_Math/blob/main/square_throwing/Homework.png" width=800>
+
 

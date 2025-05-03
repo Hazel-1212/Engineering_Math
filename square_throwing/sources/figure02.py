@@ -55,10 +55,9 @@ def main():
         q_n_values = simulate_square_throwing(T, edge)
         figure01.draw_plot(T, q_n_values, i)
         converge_value = np.floor(q_n_values[-1] * 1000) / 1000
-        #plt.axhline(y=converge_value, color='r', linestyle='--', label=f'Converged Value: {converge_value}')
-        plt.axhline(y=0.102, color='r', linestyle='--', label=f'E[$q_n$]: 0.102')
+        plt.axhline(y=converge_value, color='r', linestyle='--', label=f'E[$q_n$] ≈ {converge_value}')
     
-    print(f"The result gets close to {converge_value} as n gets large.")
+    print(f"E[$q_n$]≈ {converge_value}")
 
     plt.suptitle('Simulation of Square Throwing Probability_Fig02', fontsize=14)
     plt.tight_layout(rect=[0, 0, 1, 0.95])  

@@ -63,7 +63,7 @@ def draw_plot(T, w_n_values, i):
     ax.plot(T, w_n_values, marker='o', linestyle='-', color='b')
     ax.set_xscale('log')
     if i == 1:
-        ax.set_ylim(0, 0.1)
+        ax.set_ylim(0, 0.5)
     else:
         ax.set_ylim(0, 0.02)
     ax.set_xlabel('n (Number of Throws)')
@@ -89,10 +89,10 @@ def main():
             w_n_values = simulate_square_throwing(T, edge)
             draw_plot(T, w_n_values, i)
             converge_value = w_n_values[-1]
-            plt.axhline(y=converge_value, color='r', linestyle='--', label=f'Converged Value: {converge_value}')  
+            plt.axhline(y=converge_value, color='r', linestyle='--', label=f'E[W] ≈ {converge_value}')  
         else:
             draw_plot(T, w_n_values, i)
-            plt.axhline(y=converge_value, color='r', linestyle='--', label=f'Converged Value: {converge_value}')
+            plt.axhline(y=converge_value, color='r', linestyle='--', label=f'E[W] ≈ {converge_value}')
         
     # Print the results
     print("Simulating Results")
@@ -103,7 +103,7 @@ def main():
     
     print("-" * 20)
     print("Conclusion :")
-    print("E[W] is approximately {:^.4f}.".format(converge_value))
+    print("E[W] ≈ {:^.4f}.".format(converge_value))
 
     plt.suptitle('Estimation of Intersection Area', fontsize=14)
     plt.tight_layout(rect=[0, 0, 1, 0.95])  

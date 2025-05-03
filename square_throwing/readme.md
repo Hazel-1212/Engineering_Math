@@ -17,12 +17,20 @@ And Y and θ are independent.
 
 The goal is to get the E[qn] and E[W] via conducting the simulation for the large enough number of times.
 
+- In Task 1, Y and θ are uniformly distributed. Figure 1 is created to show qn, the sum of Bernoulli random variable ak, for k=1, 2…n. 
+
+- Task 2 holds a difference from Task 1. θ is still uniformly distributed, yet Y is not. 
+
+- Task 3 requires finding the expected value of W, which is the area of square that below x axis. 
+
+- Merge all the program in main code NYCU-113511170.py.
+
 ## Python Code
 
 - NYCU-113511170.py : main program
-- figure01.py
-- figure02.py
-- figure03.py
+- figure01.py : task1
+- figure02.py : task2
+- figure03.py : task3
 - verify_area.py : 
 
     *To verify if E[W] obtained from figure3.py is correct.*

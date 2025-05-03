@@ -25,7 +25,7 @@ def simulate_square_throwing(T, edge=1):
         
     q_n_values = []
 
-    print(f"Simulating Results")
+    print(f"Simulated Results")
 
     for N in T:
         count = 0
@@ -62,8 +62,8 @@ def main():
     for i in range(1, 3):
         q_n_values = simulate_square_throwing(T, edge)
         draw_plot(T, q_n_values, i)
-        converge_value = np.floor(q_n_values[-1] * 1000) / 1000
-        plt.axhline(y=converge_value, color="r", linestyle='--', label=f'E[$q_n$] ≈{converge_value}')
+        converge_value = q_n_values[-1]
+        plt.axhline(y=converge_value, color="r", linestyle='--', label='E[$q_n$] ≈{:.3f}'.format(converge_value))
 
     
     print(f"E[qn] ≈ {converge_value}")

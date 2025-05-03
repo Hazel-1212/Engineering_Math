@@ -95,7 +95,7 @@ def main():
             plt.axhline(y=converge_value, color='r', linestyle='--', label=f'E[W] ≈ {converge_value}')
         
     # Print the results
-    print("Simulating Results")
+    print("Simulated Results")
     data = [(T[i], w_n_values[i]) for i in range(len(T))]
 
     for i in range(len(data)):
